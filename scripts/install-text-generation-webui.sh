@@ -10,6 +10,9 @@ cd /opt/text-generation-webui
 python3 -m venv .
 source bin/activate
 
+export PYTHONUNBUFFERED=1
+export PYTHONIOENCODING=UTF-8
+
 pip3 install \
     torch==${TORCH_VERSION:?} \
     torchvision==${TORCH_VISION_VERSION:?} \
