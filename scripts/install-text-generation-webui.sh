@@ -10,7 +10,11 @@ cd /opt/text-generation-webui
 python3 -m venv .
 source bin/activate
 
-pip3 install torch==2.3.1+cpu torchvision==0.18.1+cpu torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cpu
+pip3 install \
+    torch==${TORCH_VERSION:?} \
+    torchvision==${TORCH_VISION_VERSION:?} \
+    torchaudio==${TORCH_AUDIO_VERSION:?} \
+    --index-url https://download.pytorch.org/whl/cpu
 pip3 install -r requirements_cpu_only.txt
 
 # TODO; Install extensions.

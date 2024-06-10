@@ -12,6 +12,9 @@ ARG USER_ID
 ARG GROUP_ID
 ARG TEXT_GENERATION_WEBUI_VERSION
 ARG TEXT_GENERATION_WEBUI_SHA256_CHECKSUM
+ARG TORCH_VERSION
+ARG TORCH_VISION_VERSION
+ARG TORCH_AUDIO_VERSION
 ARG PACKAGES_TO_INSTALL
 
 RUN \
@@ -36,7 +39,7 @@ RUN \
         ${USER_NAME:?} \
         ${GROUP_NAME:?} \
     && chown -R ${USER_NAME:?}:${GROUP_NAME:?} /opt/text-generation-webui/ \
-    && su --login --shell /bin/bash --command "/scripts/install-text-generation-webui.sh" ${USER_NAME:?} \
+    && su --login --shell /bin/bash --command "TORCH_VERSION=${TORCH_VERSION:?} TORCH_VISION_VERSION=${TORCH_VISION_VERSION:?} TORCH_AUDIO_VERSION=${TORCH_AUDIO_VERSION:?} /scripts/install-text-generation-webui.sh" ${USER_NAME:?} \
     && ln -sf /scripts/start-text-generation-webui.sh /opt/bin/start-text-generation-webui \
     # Clean up. \
     && rm /scripts/install-text-generation-webui.sh \
