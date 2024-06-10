@@ -1,4 +1,5 @@
 IMAGE_NAME := homelab-text-generation-webui
+IMAGE_SUPPORTED_DOCKER_PLATFORMS := linux/amd64
 
 include ./.bootstrap/makesystem.mk
 
