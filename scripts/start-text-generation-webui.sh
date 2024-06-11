@@ -10,7 +10,7 @@ start_text_generation_webui() {
     export PYTHONUNBUFFERED=1
     export PYTHONIOENCODING=UTF-8
 
-    exec python3 /opt/text-generation-webui/server.py \
+    exec python3 server.py \
         --listen \
         --listen-port 7860 \
         --api \
