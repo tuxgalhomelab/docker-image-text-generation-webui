@@ -15,14 +15,11 @@ ARG TEXT_GENERATION_WEBUI_SHA256_CHECKSUM
 ARG TORCH_VERSION
 ARG TORCH_VISION_VERSION
 ARG TORCH_AUDIO_VERSION
-ARG PACKAGES_TO_INSTALL
 
 RUN \
     set -e -o pipefail \
     # Install build dependencies. \
-    && homelab install util-linux \
-    # Install dependencies. \
-    && homelab install ${PACKAGES_TO_INSTALL:?} \
+    && homelab install util-linux git build-essential \
     # Create the user and the group. \
     && homelab add-user \
         ${USER_NAME:?} \
@@ -43,7 +40,7 @@ RUN \
     && ln -sf /scripts/start-text-generation-webui.sh /opt/bin/start-text-generation-webui \
     # Clean up. \
     && rm /scripts/install-text-generation-webui.sh \
-    && homelab remove util-linux \
+    && homelab remove util-linux git build-essential \
     && homelab cleanup
 
 ENV USER=${USER_NAME}
