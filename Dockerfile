@@ -17,7 +17,7 @@ ARG TORCH_VISION_VERSION
 ARG TORCH_AUDIO_VERSION
 
 RUN \
-    set -e -o pipefail \
+    set -E -e -o pipefail \
     # Install build dependencies. \
     && homelab install util-linux git build-essential \
     # Create the user and the group. \

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e -o pipefail
+set -E -e -o pipefail
 
 start_text_generation_webui() {
     echo "Starting text-generation-webui ..."
