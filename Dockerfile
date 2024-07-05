@@ -50,4 +50,4 @@ USER ${USER_NAME}:${GROUP_NAME}
 WORKDIR /home/${USER_NAME}
 
 CMD ["start-text-generation-webui"]
-STOPSIGNAL SIGTERM
+STOPSIGNAL SIGINT
