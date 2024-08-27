@@ -20,6 +20,7 @@ ARG TORCH_AUDIO_VERSION
 
 RUN \
     set -E -e -o pipefail \
+    && export HOMELAB_VERBOSE=y \
     # Install build dependencies. \
     && homelab install util-linux git build-essential \
     # Create the user and the group. \
