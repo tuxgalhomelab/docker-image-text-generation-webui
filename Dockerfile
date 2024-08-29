@@ -6,8 +6,6 @@ FROM ${BASE_IMAGE_NAME}:${BASE_IMAGE_TAG}
 
 COPY scripts/start-text-generation-webui.sh scripts/install-text-generation-webui.sh /scripts/
 
-SHELL ["/bin/bash", "-c"]
-
 ARG USER_NAME
 ARG GROUP_NAME
 ARG USER_ID
