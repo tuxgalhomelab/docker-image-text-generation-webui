@@ -16,6 +16,7 @@ ARG TORCH_VERSION
 ARG TORCH_VISION_VERSION
 ARG TORCH_AUDIO_VERSION
 
+# hadolint ignore=SC3040
 RUN \
     set -E -e -o pipefail \
     && export HOMELAB_VERBOSE=y \
