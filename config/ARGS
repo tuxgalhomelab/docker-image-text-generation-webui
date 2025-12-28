@@ -1,5 +1,5 @@
 BASE_IMAGE_NAME=tuxgal/homelab-python-base
-BASE_IMAGE_TAG=0.3.3-bookworm-20250224-slim-python-3.12.9
+BASE_IMAGE_TAG=0.3.8-bookworm-20251208-slim-python-3.13.11
 USER_NAME=tgwebui
 GROUP_NAME=tgwebui
 USER_ID=16007
